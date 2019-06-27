@@ -4,11 +4,11 @@ use crypto::mac::Mac;
 use crypto::sha1::Sha1;
 use rand::seq::SliceRandom;
 
-pub fn oauth1_authorization_header(bearer_token: &str) -> String {
+pub fn oauth2_authorization_header(bearer_token: &str) -> String {
     format!("Bearer {}", bearer_token)
 }
 
-pub fn oauth2_authorization_header(
+pub fn oauth1_authorization_header(
     consumer_key: &str,
     consumer_secret: &str,
     access_token: &str,
@@ -100,11 +100,11 @@ fn make_query(list: &Vec<(&str, String)>, separator: &str) -> String {
 #[cfg(test)]
 mod tests {
     #[test]
-    fn it_oauth1_authorization_header() {
-        assert_eq!("Bearer abc", crate::oauth1_authorization_header("abc"));
+    fn it_oauth2_authorization_header() {
+        assert_eq!("Bearer abc", crate::oauth2_authorization_header("abc"));
         println!(
             "{}",
-            crate::oauth2_authorization_header(
+            crate::oauth1_authorization_header(
                 "a",
                 "b",
                 "c",
