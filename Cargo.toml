@@ -1,6 +1,6 @@
 [package]
 name = "twapi-oauth"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["aoyagikouhei <aoyagi.kouhei@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -13,7 +13,7 @@ documentation = "https://docs.rs/twapi-oauth"
 
 [dependencies]
 base64 = "0.10.1"
-chrono = "0.4.7"
+chrono = "0.4.9"
 rust-crypto = "0.2.36"
-rand = "0.6.5"
-url = "1.7.2"
+rand = "0.7.2"
+url = "2.1.0"

@@ -77,7 +77,8 @@ fn timestamp() -> String {
 }
 
 fn encode(s: &str) -> String {
-    url::form_urlencoded::byte_serialize(s.as_bytes()).collect::<String>()
+    // Twitter API URL encode space is %20 not +
+    url::form_urlencoded::byte_serialize(s.as_bytes()).collect::<String>().replace('+', "%20")
 }
 
 fn sign(base: &str, key: &str) -> String {
