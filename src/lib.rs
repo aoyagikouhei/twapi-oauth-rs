@@ -76,7 +76,7 @@ fn timestamp() -> String {
     format!("{}", Utc::now().timestamp())
 }
 
-fn encode(s: &str) -> String {
+pub fn encode(s: &str) -> String {
     // Twitter API URL encode space is %20 not +
     url::form_urlencoded::byte_serialize(s.as_bytes()).collect::<String>().replace('+', "%20").replace('*', "%2A").replace("%7E", "~")
 }
